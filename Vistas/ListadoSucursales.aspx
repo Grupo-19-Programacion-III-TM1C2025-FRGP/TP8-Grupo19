@@ -10,6 +10,12 @@
         .auto-style1 {
             width: 100%;
         }
+        .auto-style2 {
+            width: 244px;
+        }
+        .auto-style3 {
+            width: 296px;
+        }
     </style>
 </head>
 <body>
@@ -32,15 +38,20 @@
         </p>
         <table class="auto-style1">
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style2">Búsqueda ingrese Id sucursal:</td>
+                <td class="auto-style3">
+                    <asp:TextBox ID="txtFiltrar" runat="server" Width="240px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtFiltrar" ValidationExpression="^[0-9,$]*$">Solo ingrese valores numericos</asp:RegularExpressionValidator>
+                    <asp:Button ID="btnFiltrar" runat="server" OnClick="btnFiltrar_Click" style="margin-left: 190px" Text="Filtrar" />
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style3">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
