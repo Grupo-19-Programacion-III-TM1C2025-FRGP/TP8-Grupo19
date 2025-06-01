@@ -12,6 +12,7 @@ namespace Negocio
 {
     public class NegocioSucursales
     {
+        
         public DataTable getTabla()
         {
             DaoSucursal dao = new DaoSucursal();
@@ -25,5 +26,15 @@ namespace Negocio
             sucursal.setIdSucursal(id);
             return dao.getSucursal(sucursal);
         }
+    
+
+       public DataTable FiltrarSucursal(string IdSucursal)
+        {
+            Conexion conexion = new Conexion();
+            string consultaSQL = $"SELECT\r\nId_Sucursal ,\r\nNombreSucursal ,\r\nDescripcionSucursal, \r\nId_ProvinciaSucursal ,\r\nDireccionSucursal\r\nFROM Sucursal INNER JOIN Provincia\r\nON Id_Provincia=Id_ProvinciaSucursal \r\nWHERE Id_Sucursal = {IdSucursal} ";
+            string nombreTabla = "Sucursales";
+            return conexion.TraerTabla(consultaSQL, nombreTabla);
+        }
     }
 }
+
