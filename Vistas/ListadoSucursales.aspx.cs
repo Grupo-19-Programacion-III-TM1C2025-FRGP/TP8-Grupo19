@@ -29,7 +29,14 @@ namespace Vistas
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            grvSucursales.DataSource = negocio.FiltrarSucursal(txtFiltrar.Text); ;
+            grvSucursales.DataSource = negocio.FiltrarSucursal(txtFiltrar.Text); 
+            grvSucursales.DataBind();
+            txtFiltrar.Text = "";
+        }
+
+        protected void btnMostrar_Click(object sender, EventArgs e)
+        {
+            grvSucursales.DataSource = negocio.MostrarTodos(); 
             grvSucursales.DataBind();
             txtFiltrar.Text = "";
         }
