@@ -35,6 +35,14 @@ namespace Negocio
             string nombreTabla = "Sucursales";
             return conexion.TraerTabla(consultaSQL, nombreTabla);
         }
+
+        public DataTable MostrarTodos()
+        {
+            Conexion conexion = new Conexion();
+            string consultaSQL = $"SELECT\r\nId_Sucursal ,\r\nNombreSucursal ,\r\nDescripcionSucursal, \r\nId_ProvinciaSucursal ,\r\nDireccionSucursal\r\nFROM Sucursal INNER JOIN Provincia\r\nON Id_Provincia=Id_ProvinciaSucursal";
+            string nombreTabla = "Sucursales";
+            return conexion.TraerTabla(consultaSQL, nombreTabla);
+        }
     }
 }
 
