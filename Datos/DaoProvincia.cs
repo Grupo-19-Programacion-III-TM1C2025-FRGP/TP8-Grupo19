@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Data;
-using System.Data.SqlClient;
 
 using Entidades;
 
@@ -19,8 +18,6 @@ namespace Datos
         public Provincia getProvincia(Provincia pro)
         {
             string consulta = "SELECT * FROM Provincia";
-
-            var result = _conexion.TraerTabla(consulta, "Provincia");
 
             DataTable tabla = _conexion.TraerTabla("Select * from Provincia where Id_Provincia=" + pro.getIdProvincia(), "Provincia");
             pro.setIdProvincia(Convert.ToInt32(tabla.Rows[0][0].ToString()));
