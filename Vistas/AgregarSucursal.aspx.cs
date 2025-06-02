@@ -24,5 +24,18 @@ namespace Vistas
                 ddlProvincia.DataBind();
             }
         }
+
+        protected void LimpiarContenidoForm()
+        {
+            txtNombre.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+            ddlProvincia.SelectedIndex = 0;
+        }
+
+        protected void MostrarMensajeExito()
+        {
+            lblMensajeExito.Text = "La sucursal se ha agregado con éxito";
+        }
     }
 }

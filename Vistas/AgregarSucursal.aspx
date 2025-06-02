@@ -16,6 +16,17 @@
         .auto-style3 {
             width: 216px;
         }
+        .auto-style4 {
+            width: 129px;
+            height: 26px;
+        }
+        .auto-style5 {
+            width: 216px;
+            height: 26px;
+        }
+        .auto-style6 {
+            height: 26px;
+        }
     </style>
 </head>
 <body>
@@ -75,21 +86,37 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style4">
                     <asp:Label ID="Label5" runat="server" Text="Dirección:"></asp:Label>
                 </td>
-                <td class="auto-style3">
+                <td class="auto-style5">
                     <asp:TextBox ID="txtDireccion" runat="server" Width="197px"></asp:TextBox>
                 </td>
-                <td>
+                <td class="auto-style6">
                     <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">*</asp:RequiredFieldValidator>
                 </td>
+                <td class="auto-style6"></td>
+                <td class="auto-style6"></td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style3">&nbsp;</td>
+                <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style3">
+                    <asp:Label ID="lblMensajeExito" runat="server"></asp:Label>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
