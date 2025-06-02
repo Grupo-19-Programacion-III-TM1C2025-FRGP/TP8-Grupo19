@@ -64,6 +64,18 @@
             </tr>
             <tr>
                 <td class="auto-style2">
+                    Provincia:</td>
+                <td class="auto-style3">
+                    <asp:DropDownList ID="ddlProvincia" runat="server" Width="201px">
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    &nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
                     <asp:Label ID="Label5" runat="server" Text="Dirección:"></asp:Label>
                 </td>
                 <td class="auto-style3">
@@ -72,13 +84,6 @@
                 <td>
                     <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">*</asp:RequiredFieldValidator>
                 </td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
