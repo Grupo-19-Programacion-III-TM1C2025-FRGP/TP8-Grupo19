@@ -17,8 +17,6 @@ namespace Datos
 
         public Provincia getProvincia(Provincia pro)
         {
-            string consulta = "SELECT * FROM Provincia";
-
             DataTable tabla = _conexion.TraerTabla("Select * from Provincia where Id_Provincia=" + pro.getIdProvincia(), "Provincia");
             pro.setIdProvincia(Convert.ToInt32(tabla.Rows[0][0].ToString()));
             pro.setDescripcionProvincia(tabla.Rows[0][1].ToString());

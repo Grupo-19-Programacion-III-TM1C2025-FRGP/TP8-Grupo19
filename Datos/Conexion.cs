@@ -30,5 +30,16 @@ namespace Datos
         {
             return _sqlConnection;
         }
+        public int ejecutarConsulta(string consultaSQL)
+        {
+            _sqlConnection.Open();
+
+            SqlCommand sqlCommand = new SqlCommand(consultaSQL, _sqlConnection);
+            int filasAfectadas = sqlCommand.ExecuteNonQuery();
+
+            _sqlConnection.Close();
+
+            return filasAfectadas;
+        }
     }
 }

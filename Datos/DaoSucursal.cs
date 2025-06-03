@@ -28,6 +28,14 @@ namespace Datos
             DataTable tabla = conexion.TraerTabla("Select Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal from Sucursal", "Sucursal");
             return tabla;
         }
+        public int agregarSucursal(Sucursal suc)
+        {
+            string consultaSQL = $"INSERT INTO Sucursal (NombreSucursal, DireccionSucursal, DescripcionSucursal, Id_ProvinciaSucursal) SELECT '{suc.getNombreSucursal()}', '{suc.getDireccionSucursal()}', '{suc.getDescripcionSucursal()}', '{suc.getIdProvincia()}'";
+            Conexion cn = new Conexion();
+
+            int filasAfectadas = cn.ejecutarConsulta(consultaSQL);
+            return filasAfectadas;
+        }
 
     }
 }
