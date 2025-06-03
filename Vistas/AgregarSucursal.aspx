@@ -78,10 +78,12 @@
                     Provincia:</td>
                 <td class="auto-style3">
                     <asp:DropDownList ID="ddlProvincia" runat="server" Width="201px">
+                        <asp:ListItem Selected="True">--Seleccionar--</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td>
-                    &nbsp;</td>
+                    <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="ddlProvincia" ErrorMessage="Seleccione una provincia" InitialValue="--Seleccionar--">*</asp:RequiredFieldValidator>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
@@ -101,7 +103,9 @@
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="Aceptar" />
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>

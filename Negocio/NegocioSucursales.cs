@@ -43,6 +43,13 @@ namespace Negocio
             string nombreTabla = "Sucursales";
             return conexion.TraerTabla(consultaSQL, nombreTabla);
         }
+        public int AgregarSucursal(Sucursal suc)
+        {
+            DaoSucursal daoSucursal = new DaoSucursal();
+            int filasAfectadas = daoSucursal.agregarSucursal(suc);
+
+            return filasAfectadas;
+        }
     }
 }
 

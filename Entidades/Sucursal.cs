@@ -18,9 +18,14 @@ namespace Entidades
         //private string DescProvincia;
         private string DireccionSucursal;
 
-
-        public Sucursal()
-        { }
+        public Sucursal() { }
+        public Sucursal(string nombre, string descripcion, int idProvincia, string direccion)
+        {
+            NombreSucursal = nombre;
+            DescripcionSucursal = descripcion;
+            IdProvincia = idProvincia;
+            DireccionSucursal = direccion;
+        }
         public int getIdSucursal()
         {
             return IdSucursal;
