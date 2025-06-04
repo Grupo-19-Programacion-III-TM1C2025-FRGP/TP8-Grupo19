@@ -12,42 +12,29 @@ namespace Negocio
 {
     public class NegocioSucursales
     {
-        
+        readonly DaoSucursal dao = new DaoSucursal();
         public DataTable getTabla()
         {
-            DaoSucursal dao = new DaoSucursal();
             return dao.getTablaSucursales();
         }
-
         public Sucursal get(int id)
         {
-            DaoSucursal dao = new DaoSucursal();
             Sucursal sucursal = new Sucursal();
             sucursal.setIdSucursal(id);
             return dao.getSucursal(sucursal);
         }
-    
-
-       public DataTable FiltrarSucursal(string IdSucursal)
+        // Acá devuelvo un dataTable pero ¿Sería mejor devolver un solo objeto Sucursal y agregarlo al gvSucursales?
+        public DataTable MostrarSucursalFiltrada(string idSucursal)
         {
-            Conexion conexion = new Conexion();
-            string consultaSQL = $"SELECT\r\nId_Sucursal ,\r\nNombreSucursal ,\r\nDescripcionSucursal, \r\nId_ProvinciaSucursal ,\r\nDireccionSucursal\r\nFROM Sucursal INNER JOIN Provincia\r\nON Id_Provincia=Id_ProvinciaSucursal \r\nWHERE Id_Sucursal = {IdSucursal} ";
-            string nombreTabla = "Sucursales";
-            return conexion.TraerTabla(consultaSQL, nombreTabla);
+            return dao.FiltrarSucursal(idSucursal);
         }
-
-        public DataTable MostrarTodos()
+        public DataTable MostrarTodo()
         {
-            Conexion conexion = new Conexion();
-            string consultaSQL = $"SELECT\r\nId_Sucursal ,\r\nNombreSucursal ,\r\nDescripcionSucursal, \r\nId_ProvinciaSucursal ,\r\nDireccionSucursal\r\nFROM Sucursal INNER JOIN Provincia\r\nON Id_Provincia=Id_ProvinciaSucursal";
-            string nombreTabla = "Sucursales";
-            return conexion.TraerTabla(consultaSQL, nombreTabla);
+            return dao.getTablaSucursales();
         }
         public int AgregarSucursal(Sucursal suc)
         {
-            DaoSucursal daoSucursal = new DaoSucursal();
-            int filasAfectadas = daoSucursal.agregarSucursal(suc);
-
+            int filasAfectadas = dao.agregarSucursal(suc);
             return filasAfectadas;
         }
     }

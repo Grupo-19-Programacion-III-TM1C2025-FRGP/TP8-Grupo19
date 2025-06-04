@@ -17,7 +17,6 @@ namespace Entidades
         private int IdProvincia;
         //private string DescProvincia;
         private string DireccionSucursal;
-
         public Sucursal() { }
         public Sucursal(string nombre, string descripcion, int idProvincia, string direccion)
         {
@@ -58,7 +57,6 @@ namespace Entidades
         {
             IdProvincia = idProvincia;
         }
-
         public string getDireccionSucursal()
         {
             return DireccionSucursal;
