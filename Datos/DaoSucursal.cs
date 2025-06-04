@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-   public class DaoSucursal
+    public class DaoSucursal
     {
         Conexion conexion = new Conexion();
         public Sucursal getSucursal(Sucursal suc)
@@ -22,7 +22,6 @@ namespace Datos
             suc.setDireccionSucursal(tabla.Rows[0][4].ToString());
             return suc;
         }
-
         public DataTable getTablaSucursales()
         {
             DataTable tabla = conexion.TraerTabla("Select Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal from Sucursal", "Sucursal");
@@ -36,6 +35,12 @@ namespace Datos
             int filasAfectadas = cn.ejecutarConsulta(consultaSQL);
             return filasAfectadas;
         }
-
+        public DataTable FiltrarSucursal(string IdSucursal)
+        {
+            Conexion conexion = new Conexion();
+            string consultaSQL = $"SELECT\r\nId_Sucursal ,\r\nNombreSucursal ,\r\nDescripcionSucursal, \r\nId_ProvinciaSucursal ,\r\nDireccionSucursal\r\nFROM Sucursal INNER JOIN Provincia\r\nON Id_Provincia=Id_ProvinciaSucursal \r\nWHERE Id_Sucursal = {IdSucursal} ";
+            string nombreTabla = "Sucursales";
+            return conexion.TraerTabla(consultaSQL, nombreTabla);
+        }
     }
 }

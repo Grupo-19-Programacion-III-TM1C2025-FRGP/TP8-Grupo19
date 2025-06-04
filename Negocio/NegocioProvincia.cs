@@ -12,7 +12,6 @@ namespace Negocio
     public class NegocioProvincia
     {
         public NegocioProvincia() { }
-
         public DataTable getTabla()
         {
             DaoProvincia dao = new DaoProvincia();
