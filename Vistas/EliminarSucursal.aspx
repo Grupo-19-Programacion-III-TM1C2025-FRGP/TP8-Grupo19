@@ -25,8 +25,11 @@
         <p style="margin-left: 160px">
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Eliminar Sucursal"></asp:Label>
         </p>
-        <p>
-            &nbsp;</p>
+        <p style="margin-left: 120px">
+            <asp:Label ID="Label2" runat="server" Text="Ingresar ID Sucursal"></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server" Height="18px" style="margin-left: 28px" Width="185px"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" style="margin-left: 29px" Text="Eliminar" />
+        </p>
     </form>
 </body>
 </html>

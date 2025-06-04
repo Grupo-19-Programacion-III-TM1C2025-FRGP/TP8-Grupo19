@@ -5,7 +5,7 @@ namespace Datos
 {
     public class Conexion
     {
-        private string _cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog = BDSucursales; Integrated Security = True; Encrypt=False";
+        private string _cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=False";
         private readonly SqlConnection _sqlConnection;
 
         public Conexion()
