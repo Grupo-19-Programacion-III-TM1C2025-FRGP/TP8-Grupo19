@@ -24,7 +24,7 @@ namespace Datos
         }
         public DataTable getTablaSucursales()
         {
-            DataTable tabla = conexion.TraerTabla("Select Id_Sucursal, NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal from Sucursal", "Sucursal");
+            DataTable tabla = conexion.TraerTabla("SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [DescripcionProvincia],[DireccionSucursal] \r\nFROM Sucursal \r\nINNER JOIN Provincia\r\nON Provincia.Id_Provincia = Id_ProvinciaSucursal", "Sucursal");
             return tabla;
         }
         public int agregarSucursal(Sucursal suc)
@@ -38,8 +38,8 @@ namespace Datos
         public DataTable FiltrarSucursal(string IdSucursal)
         {
             Conexion conexion = new Conexion();
-            string consultaSQL = $"SELECT\r\nId_Sucursal ,\r\nNombreSucursal ,\r\nDescripcionSucursal, \r\nId_ProvinciaSucursal ,\r\nDireccionSucursal\r\nFROM Sucursal INNER JOIN Provincia\r\nON Id_Provincia=Id_ProvinciaSucursal \r\nWHERE Id_Sucursal = {IdSucursal} ";
-            string nombreTabla = "Sucursales";
+            string consultaSQL = $"SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [DescripcionProvincia],[DireccionSucursal]\r\nFROM Sucursal INNER JOIN Provincia\r\nON Id_Provincia=Id_ProvinciaSucursal \r\nWHERE Id_Sucursal = {IdSucursal} ";
+            string nombreTabla = "Sucursal";
             return conexion.TraerTabla(consultaSQL, nombreTabla);
         }
 
