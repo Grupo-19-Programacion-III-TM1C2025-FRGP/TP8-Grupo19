@@ -33,7 +33,7 @@
             <asp:Button ID="btnEliminar" runat="server" style="margin-left: 15px" Text="Eliminar" OnClick="btnEliminarSucursal" Width="69px" />
         </p>
         <p style="margin-left: 160px">
-            <asp:Label ID="lblMensajeError" runat="server"></asp:Label>
+            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
         </p>
     </form>
 </body>
