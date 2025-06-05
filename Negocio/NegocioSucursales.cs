@@ -37,6 +37,11 @@ namespace Negocio
             int filasAfectadas = dao.agregarSucursal(suc);
             return filasAfectadas;
         }
+
+        public int EliminarSucursalPorId(string id)
+        {
+            return dao.EliminarSucursalPorId(id);
+        }
     }
 }
 
