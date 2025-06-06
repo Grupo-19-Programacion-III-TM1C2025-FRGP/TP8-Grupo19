@@ -39,7 +39,7 @@ namespace Vistas
         }
         protected void MostrarMensajeError()
         {
-            lblMensaje.Text = "No se encotró una sucursal con el ID ingresado.";
+            lblMensaje.Text = "No se encontró una sucursal con el ID ingresado.";
         }
 
     }
